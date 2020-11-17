@@ -1,0 +1,25 @@
+<p style="font-weight: bold;">
+    Select file (*.csv) to import data
+</p>
+
+<form [formGroup]="importDataForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="file" formControlName="importFile" name="importFile" id="importFile"
+                    (change)="onImportFileChange($event)" accept=".csv" />
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="float-right">
+                    <button mat-raised-button class="mt-2 mb-2 mr-2" (click)="onCancelClick()">
+                        Cancel
+                    </button>
+
+                    <button type="submit" mat-raised-button color="primary" class="mt-2 mb-2 mr-2">
+                        Import
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
